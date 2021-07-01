@@ -46,32 +46,9 @@ This container will hold the Application,ie, API service for our scraper.The dat
 
 Scraper container will be linked to DB container.We will be exposing port 80 since this is a webservice. 
 
-### Install Docker compose
-
-``` pip install docker-compose ```
- Since we use multi containers, we are defining the docker compose file.
 
 
-### Insert url to Crawl
-1.Create a csv file which contain the urls 'urls.csv' 
 
-2.Add this csv file to 'application' folder
 
-### System Layout
 
-![alt tag](https://raw.githubusercontent.com/sayonetech/automated-scraper/master/specs/SYSTEM-ARCHITECTUER.png)
-
-### To build in LOCAL
-
-1. Pull the repo to your local system.
-2. Navigate to project folder. 
-3. Update the path of Scraper Dockerfile in docker-compose.yml
-4. To make the system run, use the following code 
-   ```docker-compose up ```
-    This command will automatically create the Docker image and will run the container .
-5. To check whether the container is live or not, run the following code.
-   ``` sudo docker ps ```
-    This will show the live containers in system.There you can find our 3 containers.
-
-The results will be shown in admin page, while running in local. Refer the api structure while it is running in live. 
 
