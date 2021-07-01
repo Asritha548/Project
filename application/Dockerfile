@@ -1,6 +1,6 @@
 ############################################################
 # Dockerfile for a Django development environment
-# Based on Python:2.7 Image
+# Based on Python:3.6 Image
 ############################################################
 
 FROM python:3.6
