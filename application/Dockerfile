@@ -3,7 +3,7 @@
 # Based on Python:2.7 Image
 ############################################################
 
-FROM python:2.7
+FROM python:3.6
 
 #Add Project to docker
 ADD . /app/
