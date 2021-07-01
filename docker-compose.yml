@@ -1,0 +1,27 @@
+#This file is for illustrative and dev purposes
+version: '1'
+services:
+  db:
+    restart: always
+    image: postgres:9.4
+    environment:
+       - POSTGRES_PASSWORD=pass1234
+       - POSTGRES_USER=asritha
+       - POSTGRES_DB=scraper 
+    volumes:
+       - ./db:/var/lib/postgresql/data/
+  scraper:
+    restart: always
+    build: ./scraper application
+    volumes:
+       - ./data:/scraper-cache
+    
+    depends_on:
+       - db      
+    environment:
+       - DB_PASS=pass1234
+       - DB_USER=asritha
+       - DB_NAME=scraper 
+       - DB_HOST=db
+
+       
