@@ -1,0 +1,16 @@
+
+  min_ansible_version: 2.3
+
+  platforms:
+  - name: Ubuntu
+    versions:
+      - all
+  - name: MacOSX
+    versions:
+      - all
+
+  galaxy_tags:
+    - minikube
+    - kubernetes
+
+dependencies: []
