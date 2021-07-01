@@ -31,7 +31,6 @@ We will be using Docker compose to link the DB and Scraper application container
  - In this design, we didn't consider the OS where the container is running. But, we should add the new list "include tasks" to handle the different Operating systems(linux, macos and windows).
  
  List to be included in ansible playbook file:
- ---
 
 - include_tasks: linux.yml
   when: ansible_system == 'Linux'
