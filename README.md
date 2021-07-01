@@ -28,14 +28,13 @@ We will be using Docker compose to link the DB and Scraper application container
 - Testing strategy should be changed according to the OS where the container is running. Tools that can be used to test Docker containers include Kitematic and Vagrant.
  
  ### Design flaws and recommendations:
- - In this design, we didn't consider the OS where the container is running. But, we should add the new list "include tasks" to handle the different Operating systems(linux, macos and windows).
- 
+In this design, we didn't consider the OS where the container is running. But, we should add the new list "include tasks" to handle the different Operating systems(linux, macos and windows).
  List to be included in ansible playbook file:
-
-- include_tasks: linux.yml
-  when: ansible_system == 'Linux'
-
-- include_tasks: macos.yml
-  when: ansible_system == 'Darwin'
+     - include_tasks: linux.yml
+       when: ansible_system == 'Linux'
+     - include_tasks: macos.yml
+       when: ansible_system == 'Darwin' 
+     - include_taks: windows.yml
+       when: anible_system == 'windows'
  
-- Along with the DB and Scraper container there is a necessity to add the Application API container which will provide the API service for the scraper.The data which is saved in DB by scraper can be accessed using this container. For caching the response of the url request, we have to mount a volume in the path '/scraper-cache',so the cached data will not be lost. We can reuse the data once we restart the container.
+Along with the DB and Scraper container there is a necessity to add the Application API container which will provide the API service for the scraper.The data which is saved in DB by scraper can be accessed using this container. For caching the response of the url request, we have to mount a volume in the path '/scraper-cache',so the cached data will not be lost. We can reuse the data once we restart the container.
