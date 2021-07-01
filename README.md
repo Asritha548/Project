@@ -1,9 +1,3 @@
-# Project
-
-The project consist of two parts :
-1)A Scrapy project- which is used to crawl data from specified url list.
-2)A Django REST API- is used to access the result of the scraped data.
-
 
 Overview
 
