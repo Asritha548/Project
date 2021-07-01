@@ -1,14 +1,14 @@
 
 Overview
 
-In our system we are using 3 containers which work together to make our system scalable with any number of urls
+In the project we are using 3 containers which work together to make our system scalable with any number of urls
 1.DataBase
 2.Application
 3.Scraper
 
 
 ###DB Container 
-This container holds the DB for the use of our system.The container is build on the base image of Postgres.The ENV_variables which should be passed are :
+This is the DB.The container is build on the base image of Postgres.The ENV_variables are :
 - POSTGRES_PASS:Password for the database user
 - POSTGRES_USER:Username for  the user who have access to the database
 - POSTGRES_DB: Datatabase name 
@@ -17,7 +17,7 @@ To prevent data loss after the restart of the database, we will mount a vloume a
 
 
 ### Scraper Container 
- This container hold the scraper i.e the container which will crawl the list of url and save that to the Database.The Dockerfile for the docker image will be present in the repo under web-analysis folder.The ENV_varables which should be passed are:
+ This container hold the scraper i.e the container which will crawl the list of urls and save that to the Database.The ENV_varables  are:
 - DB_PASS:Password for DB user.
 - DB_USER:Username for  the user who have access to the data.
 - DB_NAME: Database name which is defined in Db container
@@ -27,7 +27,7 @@ We will be using Docker compose to link the DB, Scraper and Application containe
 
 ###Application Container 
 
-This container will hold the Application,ie, API service for our scraper.The data which is saved in DB by scraper can be accessed using this container.The Dockerfile for the docker image will be present in the repo under'application' folder.The ENV_variables  which should be passed are:
+This container will hold the Application,ie, API service for our scraper.The data which is saved in DB by scraper can be accessed using this container.The ENV_variables are:
 
 - DB_PASS:Password for DB user .
 - DB_USER:Username for  the user who have access to the data.
